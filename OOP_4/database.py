@@ -1,0 +1,10 @@
+import mysql.connector
+class database:
+    def db(self):
+        mydb = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password = '',
+            port='3306',
+            database='oop_4')
+        return mydb
