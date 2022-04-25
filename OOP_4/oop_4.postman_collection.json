@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"acc_number\":\"\",\r\n    \"amount\": ,\r\n    \"category\": ,\r\n    \"cus_id\": ,\r\n    \"link\": \r\n}",
+					"raw": "{\r\n    \"acc_number\":\"\",\r\n    \"amount\": ,\r\n    \"category\": ,\r\n    \"cus_id\": \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 			"response": []
 		},
 		{
-			"name": "update_link",
+			"name": "set_link",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -144,7 +144,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:1010/update_link",
+					"raw": "http://127.0.0.1:1010/set_link",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -154,7 +154,7 @@
 					],
 					"port": "1010",
 					"path": [
-						"update_link"
+						"set_link"
 					]
 				}
 			},
@@ -199,6 +199,50 @@
 					"port": "1010",
 					"path": [
 						"show_current_acc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show_cus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:1010/show_cus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1010",
+					"path": [
+						"show_cus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show_acc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:1010/show_acc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1010",
+					"path": [
+						"show_acc"
 					]
 				}
 			},

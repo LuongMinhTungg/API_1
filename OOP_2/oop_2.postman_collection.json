@@ -9,7 +9,21 @@
 			"name": "show_cus",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:1111/show_cus",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1111",
+					"path": [
+						"show_cus"
+					]
+				}
 			},
 			"response": []
 		},
@@ -30,6 +44,28 @@
 					"port": "1111",
 					"path": [
 						"show_pro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show_bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:1111/show_bill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1111",
+					"path": [
+						"show_bill"
 					]
 				}
 			},
@@ -154,6 +190,37 @@
 					"port": "1111",
 					"path": [
 						"sell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show_bill_info_by_bill_id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bill_id\":\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:1111/show_bill_info_by_bill_id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "1111",
+					"path": [
+						"show_bill_info_by_bill_id"
 					]
 				}
 			},
