@@ -4,7 +4,7 @@ class database:
         mydb = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='trafalgarlaw1910',
+            password='',
             port='3306',
             database='oop_2')
         return mydb
