@@ -12,12 +12,15 @@ class Customer:
             acc = self.mycusor.fetchall()
             output = []
             for i in acc:
-                acc_data = {'name': i[1], 'phone': i[2]}
+                acc_data = {'id':i[0],'name': i[1], 'phone': i[2]}
                 output.append(acc_data)
-            return jsonify({'list':output})
+            if len(output) == 0:
+                return 'None'
+            else:
+                return jsonify(output)
         except Exception as e:
             self.mydb.rollback()
-            return jsonify({'error': e})
+            return 'None'
 
 
     def add_cus(self, name, phone):
@@ -27,4 +30,15 @@ class Customer:
             return 'add'
         except Exception as e:
             self.mydb.rollback()
-            return jsonify({'error': e})
+            return 'none'
+
+    def check_cus_id(self, cus_id):
+        try:
+            self.mycusor.execute('select * from oop_2.customer where id = %s ', (cus_id,))
+            cus = self.mycusor.fetchall()
+            if len(cus) == 0:
+                return False
+            else:
+                return True
+        except Exception as e:
+            return 'None'

@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45f3e008-d66d-4466-bcd7-19e1f6989b38" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/OOP_4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_1/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OOP_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OOP_1/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_1/validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_1/DB_OOP_1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_1/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OOP_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_2/DB_OOP_2.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../OOP_2/bill.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/bill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_2/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_2/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OOP_2/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OOP_2/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../OOP_2/validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB_OOP_4.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/acount.py" beforeDir="false" afterPath="$PROJECT_DIR$/acount.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/validate.py" afterDir="false" />
@@ -40,6 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OOP_2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>

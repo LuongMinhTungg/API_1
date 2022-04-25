@@ -18,3 +18,12 @@ class Customer:
         self.mycusor.execute('insert into oop_4.customer (name) values (%s)',(name, ))
         self.mydb.commit()
         return 'add'
+
+    def show_cus(self):
+        self.mycusor.execute('select * from oop_4.customer')
+        cus = self.mycusor.fetchall()
+        output = []
+        for i in cus:
+            cus_data = {'cus_id':i[0], 'name':i[1], 'count_acc':i[2]}
+            output.append(cus_data)
+        return jsonify(output)

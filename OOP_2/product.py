@@ -12,7 +12,7 @@ class Product:
             acc = self.mycusor.fetchall()
             output = []
             for i in acc:
-                acc_data = {'name': i[1], 'brand_name': i[2], 'category': i[3], 'price': i[4]}
+                acc_data = {'id':i[0],'name': i[1], 'brand_name': i[2], 'category': i[3], 'price': i[4]}
                 output.append(acc_data)
             if len(output) == 0:
                 return 'None'
@@ -39,6 +39,13 @@ class Product:
             return 'delete'
         except Exception as e:
             self.mydb.rollback()
-            return jsonify({'error': e})
+            return 'none'
 
+    def check_pro(self,pro_id):
+        self.mycusor.execute('select * from oop_2.product where bill_id = %s', (pro_id,))
+        pro = self.mycusor.fetchall()
+        if len(pro) == 0:
+            return False
+        else:
+            return True
 

@@ -112,7 +112,22 @@ def withdrawal():
             return V.vali_deposit(data)
     except Exception as e:
         return 'None'
+    
+@app.errorhandler(404)
+def page_not_found(error):
+    return 'wrong url'
 
+@app.errorhandler(400)
+def page_not_found(error):
+    return 'bad request'
+
+@app.errorhandler(405)
+def page_not_found(error):
+    return 'wrong methods'
+
+@app.errorhandler(500)
+def page_not_found(error):
+    return 'serve error'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8686')

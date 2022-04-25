@@ -2,15 +2,32 @@ from flask import jsonify
 from database import database as db
 import datetime
 from product import Product as P
+from customer import Customer as C
 class Bill:
     mydb = db().db()
     mycusor = mydb.cursor()
     list = []
 
+    def show_bill(self):
+        try:
+            self.mycusor.execute('select * from oop_2.bill')
+            bill = self.mycusor.fetchall()
+            output = []
+            for i in bill:
+                bill_data = {'id':i[0],'cus_id': i[1], 'time': i[2]}
+                output.append(bill_data)
+            if len(output) == 0:
+                return 'None'
+            else:
+                return jsonify(output)
+        except Exception as e:
+            self.mydb.rollback()
+            return 'None'
+
     def add_bill(self,cus_id):
         try:
-            if self.check_cus_id(cus_id) == False:
-                return 'None'
+            if C().check_cus_id(cus_id) == False:
+                return 'not exist'
             else:
                 time = datetime.datetime.now()
                 self.mycusor.execute('insert into oop_2.bill (cus_id,time) values(%s,%s)', (cus_id,time))
@@ -25,7 +42,7 @@ class Bill:
         self.mydb.commit()
         return 'add'
 
-    def show_bill(self, bill_id):
+    def show_bill_by_id(self, bill_id):
         try:
             self.mycusor.execute('select * from oop_2.bill where bill_id = %s',(bill_id, ) )
             acc = self.mycusor.fetchall()
@@ -41,7 +58,7 @@ class Bill:
             self.mydb.rollback()
             return 'Error'
 
-    def show_bill_info(self, bill_id):
+    def show_bill_info_by_id(self, bill_id):
         try:
             self.mycusor.execute('select * from oop_2.bill_info where bill_id = %s',(bill_id, ) )
             acc = self.mycusor.fetchall()
@@ -57,38 +74,29 @@ class Bill:
             self.mydb.rollback()
             return 'None'
 
-    def check_cus_id(self, cus_id):
-        try:
-            self.mycusor.execute('select * from oop_2.customer where id = %s ', (cus_id,))
-            cus = self.mycusor.fetchall()
-            if len(cus) == 1:
-                return True
-            else:
-                return False
-        except Exception as e:
-            return 'None'
+
 
     def check_bill_id(self,bill_id):
         self.mycusor.execute('select * from oop_2.bill where bill_id = %s', (bill_id,))
         bill = self.mycusor.fetchall()
-        if len(bill) == 1:
-            return True
-        else:
+        if len(bill) == 0:
             return False
+        else:
+            return True
 
     def check_pro_id(self,bill_id,pro_id):
         self.mycusor.execute('select * from oop_2.bill_info where pro_id = %s and bill_id = %s',(pro_id,bill_id))
         pro = self.mycusor.fetchall()
-        if len(pro) == 1:
-            return True
-        else:
+        if len(pro) == 0:
             return False
+        else:
+            return True
 
     def sell(self,bill_id,pro_id,count):
         try:
             self.mycusor.execute('select price from oop_2.product where id = %s',(pro_id,))
             price = self.mycusor.fetchone()
-            if self.check_bill_id(bill_id) == True:
+            if self.check_bill_id(bill_id) == True and P().check_pro(pro_id):
                 if self.check_pro_id(bill_id,pro_id) == True:
                     self.mycusor.execute('select count from oop_2.bill_info where bill_id = %s and pro_id = %s', (bill_id,pro_id))
                     c = self.mycusor.fetchone()
@@ -99,7 +107,7 @@ class Bill:
                 else:
                     return self.add_bill_info(bill_id, pro_id, price[0], count)
             else:
-                return 'None'
+                return 'not exist'
             #P.delete_pro(P, pro_id)
             #return jsonify({'bill':self.show_bill(bill_id), 'bill_info':self.show_bill_info(bill_id)})
 
