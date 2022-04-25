@@ -3,7 +3,7 @@ B1: Tạo db bằng file sql
 
 B2: Nhập lại localhost, username, password ở file database
 
-B3: Chạy file main
+B3: Chạy file main, sử dụng file colection.json ở mỗi task để test
 
 Task OOP_1:
 - http://127.0.0.1:8686/account chạy trên post man phương thức thức GET
